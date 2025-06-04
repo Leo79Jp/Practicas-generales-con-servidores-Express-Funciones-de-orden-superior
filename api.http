@@ -1,0 +1,35 @@
+### Obtener todos los países
+GET http://localhost:3000/paises/all
+Accept: application/json
+###
+### Obtener los datos de un país en particular (ejemplo: Colombia)
+GET http://localhost:3000/paises/Colombia
+Accept: application/json
+###
+### Obtener todos los países que hablen un idioma específico (ejemplo: italiano)
+GET http://localhost:3000/paises?idioma=italiano
+
+Accept: application/json
+###
+### Insertar un nuevo país
+POST http://localhost:3000/paises/
+Content-Type: application/json
+
+    {
+     "pais": "Argentina",
+     "idioma": ["Español"],
+     "continente": "América11111"
+    }
+###
+### Borrar un país (ejemplo: Argentina)
+DELETE http://localhost:3000/paises/Argentina
+Accept: application/json
+
+### Modificar/Actualizar un país (ejemplo: Argentina)
+PATCH http://localhost:3000/paises/Argentina
+content-type: application/json
+
+{
+     "idioma": ["Castellano"],
+     "continente": "America del Sur"
+}
