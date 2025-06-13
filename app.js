@@ -40,10 +40,11 @@ app.get("/paises", (req, res) => {
       res.status(404).json({ error: 'No pais found' })
     }
   }
-});
+}); 
 
 app.post('/paises', (req, res) => {
   const paisNuevo = validarPais(req.body)
+  console.log(paisNuevo);
   if (!paisNuevo.success) {
     res.status(400).json({ error: 'Invalid data: ', data: paisNuevo.error })
   }
